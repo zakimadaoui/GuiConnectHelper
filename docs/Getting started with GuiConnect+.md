@@ -103,7 +103,7 @@ Let's write some code !
 
 **The code** 
 
-```arduino
+```c
 #include"GuiConnectHelper.h"
 #include"string.h"
 
