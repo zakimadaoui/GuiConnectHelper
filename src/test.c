@@ -29,10 +29,6 @@ void test4();
 
 int main(){
     GCH_init(&gcHandle, onReceive);
-    while (Serial.av())
-    {
-        GCH_loadNextbyte(Serial.read());
-    }
     
     test0();
     test1();
