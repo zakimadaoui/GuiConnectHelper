@@ -2,7 +2,7 @@
 
 In the previous tutorial we have seen how to setup a simple GUI in **GuiConnect+** and how to receive and interpret the **default commands** of its widgets using the **GuiConnectHelper library**.
 
- Of course, in such simple applications where there is one widget of each type, using the default command for each widget is sufficient to get your project up and running. However, when your GUI starts to get complicated and you start to have multiple widgets of the same type (like a couple of sliders), then you will have to create your own custom commands to be able to distinguish between the different components. Or if you want to force certain widgets to have a specific **command name**.
+Of course, in such simple applications where there is one widget of each type, using the default command for each widget is sufficient to get your project up and running. However, when your GUI starts to get complicated and you start to have multiple widgets of the same type (like a couple of sliders), then you will have to create your own custom commands to be able to distinguish between the different components. Or if you want to force certain widgets to have a specific **command name**.
 
 In this tutorial we will see how you can create custom commands for widgets, where you can specify your desired **command name** as well as be able to add **constant parameters** which could be used to distinguish between similar widgets while keeping the same **command name**.
 
@@ -21,7 +21,8 @@ Let’s say that you have just finished 3D printing one of those servo based rob
 
 While there are several widgets such as sliders, and joysticks that could be used to control our servo motors. The **knob** widget is the closest one to a potentiometer, so we are going to use 3 of those to control our 3 servo motors. 
 
-![knobs.jpg](assets/commands/knobs.jpg)
+
+<img src="assets/commands/knobs.jpg" alt="drawing" width="300"/>
 
 If we drag and drop 3 knobs directly into the canvas and save that GUI, the 3 widgets will have the same **default command.**  However, we don’t want that to happen as we won’t be able to tell which knob is being rotated, since they all will sent the same **command name.** Instead, we want to create our own custom commands with 3 different command names, then link them to the appropriate widgets. This video shows how that could be done:
 
