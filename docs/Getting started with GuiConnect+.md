@@ -93,8 +93,7 @@ Custom commands will be discussed in the next tutorial.
 
 Now that we know which and how data is going to be sent to the microcontroller, we need a way to convert it from a stream of bytes into a set of variables that we can use in our program. For that we use the **GuiConnectHelper** C/C++ library that can parse the received commands efficiently and provide an API to read the *command_name* and *parameters* within a *callback*. 
 
-You can download it from this **GitHub** page as a .zip file, then include it into your Arduino libraries as **shown here.**
-
+You can download it from this **GitHub** page as a [`ZIP`](https://github.com/zakimadaoui/GuiConnectHelper/archive/refs/heads/master.zip) file and import it into the IDE. You can check [this guide](https://www.arduino.cc/en/guide/libraries#toc4) on Importing a .zip Library in Arduino IDE.
 Let's write some code !
 
 1. First create an instance of **GuiConnectHelper** and call it for example *gcHandle*.
@@ -102,6 +101,9 @@ Let's write some code !
 3. In order for the library to parse the received data, the program needs to continuously load incoming bytes by calling the *GCH_loadNextByte(…)* function (more on that later).
 
 **The code** 
+
+This code can be found also in the **examples** section in the ArduinoIDE if the library is installed properly.  
+
 
 ```c
 #include"GuiConnectHelper.h"
@@ -176,7 +178,6 @@ void onCommandRecieved(){
   // trying to access them outside of it will lead undesired behaviour
 }
 ```
-
 
 **Remark:** Notice that the **delay()** function was avoided inside the **loop()**, and this is because we want to read incoming bytes as soon as they arrive, and by calling **delay()**, the loop will block, and no data can be received during that time until the delay ends. And that will cause a LAG between what the user is specifying from the GUI and what the MCU actually does in action to that, as data is not being read as soon as it arrives. So either:
 - You must have your loop code non-blocking 
