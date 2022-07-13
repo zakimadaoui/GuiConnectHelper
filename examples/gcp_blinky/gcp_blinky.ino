@@ -27,7 +27,7 @@ void setup(){
 
 void loop(){
 	//load any newly available data
-	while(Serial.available()) GCH_loadNextbyte(Serial.read());
+	while(Serial.available()) GCH_loadNextbyte(&gcHandle, Serial.read());
 
 	//blink (non-blocking)
 	if(switchVal){

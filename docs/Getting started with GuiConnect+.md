@@ -5,7 +5,7 @@
 
 # Introduction
 
-**GuiConnect+** is an android app that allows you to quickly set up a graphical interface and communicate with your microcontroller wirelessly (TCP/IP and Bluetooth) or via UART. The GUIs can be built quickly using **drag-and-drop** widgets like Buttons, Slider, Joysticks and Knobs, or you can extend the functionalities of you project by using sensor blocks and take advantage of the various sensors of your device.
+[GuiConnect+](https://play.google.com/store/apps/details?id=com.zmdev.protoplus) is an android app that allows you to quickly set up a graphical interface and communicate with your microcontroller wirelessly (TCP/IP and Bluetooth) or via UART. The GUIs can be built quickly using **drag-and-drop** widgets like Buttons, Slider, Joysticks and Knobs, or you can extend the functionalities of you project by using sensor blocks and take advantage of the various sensors of your device.
 
 The widgets send data to the microcontroller as **commands**, which can be customized from the app. Then, the **GuiConnectHelper** C/C++ library is used to interpret the commands and convert them into a list of variables for the user, as well as generate callbacks when a command is fully received. The library is also **platform-independent**, i.e you can use it with any framework (Arduino, ESP IDF ,STM32 …) or even go bare-metal !
 
