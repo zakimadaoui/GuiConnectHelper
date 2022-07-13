@@ -77,25 +77,25 @@ void onCommandRecieved(){
 
  
 	char* cmdName =  GCH_GetStrCommandName(&gcHandle);
-  int angle;
+    int angle;
   
 	if(strcmp(cmdName, "k1") == 0){ //knob1 is rotated
-    angle = GCH_GetParamAsInt(&gcHandle,/*param index*/0); //get parameter 0 as an integer value
-    servo[0].write(angle);
+		angle = GCH_GetParamAsInt(&gcHandle,/*param index*/0); //get parameter 0 as an integer value
+		servo[0].write(angle);
 	}
-  else if(strcmp(cmdName, "k2") == 0){ //knob2 is rotated
-    angle = GCH_GetParamAsInt(&gcHandle,/*param index*/0); //get parameter 0 as an integer value
-    servo[1].write(angle);
- }
-  else if(strcmp(cmdName, "k3") == 0){ //knob3 is rotated
-    angle = GCH_GetParamAsInt(&gcHandle,/*param index*/0); //get parameter 0 as an integer value
-    servo[2].write(angle);
- }
+  	else if(strcmp(cmdName, "k2") == 0){ //knob2 is rotated
+		angle = GCH_GetParamAsInt(&gcHandle,/*param index*/0); //get parameter 0 as an integer value
+		servo[1].write(angle);
+ 	}
+  	else if(strcmp(cmdName, "k3") == 0){ //knob3 is rotated
+		angle = GCH_GetParamAsInt(&gcHandle,/*param index*/0); //get parameter 0 as an integer value
+		servo[2].write(angle);
+ 	}
 
   //NOTES:
   // - avoid blocking calls like 'delay()' inside this callback
-	// - do not call free() on cmdName or anything library related, the library takes care of that.
-	// - command name and parameters must only be accessed within this callback
+  // - do not call free() on cmdName or anything library related, the library takes care of that.
+  // - command name and parameters must only be accessed within this callback
   //   trying to access them outside of it will lead undesired behaviour
 }
 ```
@@ -117,24 +117,26 @@ void onCommandRecieved(){
   
 	if(cmdName == 'k'){ // a knob is rotated
     int servoIndex = GCH_GetParamAsInt(&gcHandle, 0); //get parameter 0 as an integer value
-    int angle = GCH_GetParamAsInt(&gcHandle, 1); //get parameter 1 as an integer value
+    
+	int angle = GCH_GetParamAsInt(&gcHandle, 1); //get parameter 1 as an integer value
     servo[servoIndex].write(angle);
 	}
 }
 ```
 
-Notice that this time we used the function *GCH_GetCharCommandName(…)* instead of  *GCH_GetStrCommandName(…)* since the command name is a single character and not a string, and that simplifies the code even further. Also, by using a character as a command name for different types of widgets, you can simply use a **switch-case statement**  to make your code even neater, for example:
+Notice that this time we used the function *GCH_GetCharCommandName(…)* instead of  *GCH_GetStrCommandName(…)* since the command name is a single character and not a string, and that simplifies the code even further. Also, by using a character as a command name for different types of widgets, you can simply use a **switch-case statement** to make your code even neater, for example:
 
 ```c
 void onCommandRecieved(){
 
 	char cmdName = GCH_GetCharCommandName(&gcHandle); 
-  int angle, servoIndex;
+    int angle, servoIndex;
+	
 	switch (cmdName){
 		case 'k': // a knob is rotated
-	    servoIndex = GCH_GetParamAsInt(&gcHandle, 0); //get parameter 0 as an integer value
-	    angle = GCH_GetParamAsInt(&gcHandle, 1); //get parameter 1 as an integer value
-	    servo[servoIndex].write(angle);
+			servoIndex = GCH_GetParamAsInt(&gcHandle, 0); //get parameter 0 as an integer value
+			angle = GCH_GetParamAsInt(&gcHandle, 1); //get parameter 1 as an integer value
+			servo[servoIndex].write(angle);
 			break;
 
 		case 'b': // a button was clicked
