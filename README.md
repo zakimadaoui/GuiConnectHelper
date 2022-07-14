@@ -205,4 +205,4 @@ void onCommandRecieved(){
 __________
 
 
-TODO: add license + demo video
+TODO: add demo video
