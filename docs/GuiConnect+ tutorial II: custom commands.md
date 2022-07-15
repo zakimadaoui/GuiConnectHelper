@@ -1,6 +1,6 @@
 # GuiConnect+ tutorial II : custom commands
 
-In the previous tutorial we have seen how to setup a simple GUI in **GuiConnect+** and how to receive and interpret the **default commands** of its widgets using the **GuiConnectHelper library**.
+In the [previous tutorial](https://github.com/zakimadaoui/GuiConnectHelper/blob/master/docs/Getting%20started%20with%20GuiConnect%2B.md) we have seen how to setup a simple GUI in **GuiConnect+** and how to receive and interpret the **default commands** of its widgets using the **GuiConnectHelper library**.
 
 Of course, in such simple applications where there is one widget of each type, using the default command for each widget is sufficient to get your project up and running. However, when your GUI starts to get complicated and you start to have multiple widgets of the same type (like a couple of sliders), then you will have to create your own custom commands to be able to distinguish between the different components. Or if you want to force certain widgets to have a specific **command name**.
 
