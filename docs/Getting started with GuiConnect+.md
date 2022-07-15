@@ -205,3 +205,6 @@ Once you're connected, and the previous code is uploaded, you can navigate to pr
 [![blinky GUI testing](http://img.youtube.com/vi/am1MPolhVFg/0.jpg)](http://www.youtube.com/watch?v=am1MPolhVFg "GuiConnect+: testingblinky GUI")
 # Next tutorial:
 - [Creating and using custom commands in GuiConnect+](https://github.com/zakimadaoui/GuiConnectHelper/blob/master/docs/GuiConnect%2B%20tutorial%20II:%20custom%20commands.md)
+
+# Other resources
+- [GuiConnectHelper documentation](https://github.com/zakimadaoui/GuiConnectHelper)
